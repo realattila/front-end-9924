@@ -1,3 +1,26 @@
+//////////////////
+// VS Code Extentions
+///////////////
+
+Auto Complete Tag
+
+Bracket Pair Colorizer
+
+Meterial Icon Theme
+
+npm
+
+npm Intellisense
+
+prettier
+
+Sass
+
+visual Studio IntelliCode
+
+ES7 React/Redux/GraphQL/React-Native Snippets
+
+
 /////// increace button app
 
 /*
