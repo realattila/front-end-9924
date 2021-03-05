@@ -11,12 +11,21 @@ const App = () => {
     e.preventDefault();
     console.log("form Submited");
     setTodos([...todos, input]);
-
+    setInput("");
     console.log(todos);
   };
 
   const onChangeInput = (e) => {
     setInput(e.target.value);
+  };
+
+  const handleRemoveTodo = (title) => {
+    console.log(title);
+    setTodos(
+      todos.filter((item) => {
+        return item !== title;
+      })
+    );
   };
 
   return (
@@ -29,7 +38,7 @@ const App = () => {
             inputValue={input}
           />
           <div className="mb-5"></div>
-          <Todos todos={todos} />
+          <Todos todos={todos} handleRemoveTodo={handleRemoveTodo} />
         </Col>
       </Row>
     </Container>

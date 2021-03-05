@@ -1,20 +1,10 @@
-import { Alert, Card, Button } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
+import Todo from "../Todo";
 
-const Todos = ({ todos }) => {
-  const Todo = ({ title, handleClick = () => {} }) => (
-    <Card>
-      <Card.Body>
-        <Card.Text>{title}</Card.Text>
-        <Button variant="danger" onClick={handleClick}>
-          Remove Me!
-        </Button>
-      </Card.Body>
-    </Card>
-  );
-
+const Todos = ({ todos, handleRemoveTodo }) => {
   const RenderTodos = () =>
     todos.map((item, index) => {
-      return <Todo key={index} title={item} />;
+      return <Todo key={index} title={item} handleClick={handleRemoveTodo} />;
     });
 
   return todos.length < 1 ? (
@@ -26,6 +16,7 @@ const Todos = ({ todos }) => {
 
 Todos.defaultProps = {
   todos: [],
+  handleRemoveTodo: () => {},
 };
 
 export default Todos;
