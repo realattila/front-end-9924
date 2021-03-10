@@ -1,23 +1,18 @@
-import Axios from "axios";
+import PostsContext from "../store/PostsContext";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Post from "../Post";
 
 const PostList = () => {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(null);
+  const { getData, data, error } = useContext(PostsContext);
 
-  const getData = async () => {
-    await Axios.get("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => {
-        console.log("response", response);
-        setData(response.data);
-      })
-      .catch((e) => setError(true));
+  const getPosts = async () => {
+    console.log("sss");
+    await getData();
   };
 
   useEffect(() => {
-    getData();
+    getPosts();
   }, []);
 
   const RenderPosts = () => {
@@ -29,7 +24,6 @@ const PostList = () => {
       );
     });
   };
-  // console.log("render !!");
 
   return error ? (
     <div>An Error Accoured</div>
