@@ -2,11 +2,11 @@ import { Col, Row } from "react-bootstrap";
 
 import AppShell from "./components/AppShell";
 import PostList from "./components/PostList";
-import { PostsContextContainer } from "./store/PostsContext";
+import { DataContextContainer } from "./store/DataContext";
 
 const App = () => {
   return (
-    <PostsContextContainer>
+    <DataContextContainer>
       <AppShell>
         <Row>
           <Col>
@@ -15,7 +15,7 @@ const App = () => {
           </Col>
         </Row>
       </AppShell>
-    </PostsContextContainer>
+    </DataContextContainer>
   );
 };
 

@@ -1,7 +1,5 @@
 import { Container, Navbar } from "react-bootstrap";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
 const AppShell = ({ children }) => {
   return (
     <Container>
